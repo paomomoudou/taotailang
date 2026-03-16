@@ -96,6 +96,8 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            cursor: pointer;
+            /* 鼠标悬浮变小手 */
         }
         
         .news-content h3 {
@@ -203,9 +205,9 @@
                     <img src="https://picsum.photos/180/120?random=news1" alt="在石家庄桃太郎日语，一站式搞定日语学习+日本留学">
                 </div>
                 <div class="news-content">
-                    <div>
-                        <h3><a href="newsDetail.html">在石家庄桃太郎日语，一站式搞定日语学习+日本留学</a></h3>
-                        <p class="news-desc"><a href="newsDetail.html">从零基础学日语，到顺利拿到日本大学录取通知书，桃太郎日语帮我一站式搞定了语言学习和留学规划，省心又安心。</a></p>
+                    <div onclick="goDetail(1)">
+                        <h3>在石家庄桃太郎日语，一站式搞定日语学习+日本留学</h3>
+                        <p class="news-desc">从零基础学日语，到顺利拿到日本大学录取通知书，桃太郎日语帮我一站式搞定了语言学习和留学规划，省心又安心。</p>
                     </div>
                     <div class="news-date">2026-03-10</div>
                 </div>
@@ -217,9 +219,9 @@
                     <img src="https://picsum.photos/180/120?random=news2" alt="从大学无聊到职场加分：我的日语N2逆袭之路">
                 </div>
                 <div class="news-content">
-                    <div>
-                        <h3><a href="news-detail.html">从大学无聊到职场加分：我的日语N2逆袭之路</a></h3>
-                        <p class="news-desc"><a href="news-detail.html">大学时光曾让我感到迷茫无聊，一次偶然的机会我走进桃太郎日语，从零开始系统学习，顺利拿下N2证书，更凭借这份能力成功入职日企，开启了全新的职业篇章。</a></p>
+                    <div onclick="goDetail(2)">
+                        <h3>从大学无聊到职场加分：我的日语N2逆袭之路</h3>
+                        <p class="news-desc">大学时光曾让我感到迷茫无聊，一次偶然的机会我走进桃太郎日语，从零开始系统学习，顺利拿下N2证书，更凭借这份能力成功入职日企，开启了全新的职业篇章。</p>
                     </div>
                     <div class="news-date">2026-03-05</div>
                 </div>
@@ -231,9 +233,9 @@
                     <img src="https://picsum.photos/180/120?random=news3" alt="从英语考研屡败屡战，到日语203一年高分上岸">
                 </div>
                 <div class="news-content">
-                    <div>
-                        <h3><a href="news-detail.html">从英语考研屡败屡战，到日语203一年高分上岸</a></h3>
-                        <p class="news-desc"><a href="news-detail.html">英语考研多年未果，我偶然发现可用日语203参考。在桃太郎日语系统学习一年后，我以高分成功上岸，彻底改写了考研命运。</a></p>
+                    <div onclick="goDetail(3)">
+                        <h3>从英语考研屡败屡战，到日语203一年高分上岸</h3>
+                        <p class="news-desc">英语考研多年未果，我偶然发现可用日语203参考。在桃太郎日语系统学习一年后，我以高分成功上岸，彻底改写了考研命运。</p>
                     </div>
                     <div class="news-date">2026-03-02</div>
                 </div>
@@ -246,7 +248,13 @@
     <script>
         $("#footer-box").load("footer.html");
     </script>
-
+    <script>
+        // 跳转函数：拼接URL参数
+        function goDetail(id) {
+            // 跳转到 courseInfo.html，并携带 id 参数
+            location.href = `newsDetail.html?id=${id}`;
+        }
+    </script>
 </body>
 
 </html>

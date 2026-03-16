@@ -86,11 +86,6 @@
             border-radius: 4px;
             font-weight: bold;
         }
-        
-        .pic_2 {
-            width: 70%;
-            height: 70%;
-        }
         /* 优势 */
         
         .advantage {
@@ -413,6 +408,7 @@
         .campus-info {
             flex: 1;
             line-height: 1.8;
+            font-size: 18px;
         }
         
         .map-img {
@@ -498,7 +494,7 @@
                 </div>
             </div>
             <div class="banner-contact">
-                <img src="pic/hot_course_5.PNG" class="pic_2">
+                <img src="pic/free.png">
                 <a href="tel:15931212710">拨打电话</a>
             </div>
         </div>
@@ -513,7 +509,7 @@
                 <div class="adv-item"><img src="pic/adv2.jpeg">
                     <h3>定制化课程</h3>
                 </div>
-                <div class="adv-item"><img src="pic/adv3.JPG">
+                <div class="adv-item"><img src="pic/adv3.jpeg">
                     <h3>沉浸式活动</h3>
                 </div>
                 <div class="adv-item"><img src="pic/adv4.jpeg">
@@ -633,8 +629,7 @@
                 <div class="campus-info">
                     <p>桃太郎日本语</p>
                     <p>地址：河北省石家庄市筑业高新国际A座12H</p>
-                    <p>电话： 15931212710/15032802517
-                    </p>
+                    <p>电话： 15931212710 <span style="font-weight: bold;color: #000; margin: 0 5px;">|</span> 15032802517</p>
                 </div>
                 <img class="map-img" src="https://restapi.amap.com/staticmap?size=300*200&zoom=16&markers=mid,,A:114.5469,38.0381&key=2851754372746727a08b387a0b409322" alt="地图">
             </div>
@@ -645,6 +640,16 @@
     <div id="footer-box"></div>
     <script>
         $("#footer-box").load("footer.html");
+    </script>
+    <!-- 引入右下角飘窗 -->
+    <div id="float-container"></div>
+    <script>
+        // 使用 fetch 引入公共文件
+        fetch('float.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('float-container').innerHTML = data;
+            });
     </script>
 </body>
 

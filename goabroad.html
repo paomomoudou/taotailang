@@ -31,7 +31,7 @@
         }
         /* 最新消息标题（带表情） */
         
-        .news-title {
+        .abroad-title {
             width: 90%;
             margin: 0 auto 30px;
             display: flex;
@@ -39,7 +39,7 @@
             gap: 15px;
         }
         
-        .news-title h2 {
+        .abroad-title h2 {
             font-size: 26px;
             color: #EF89A0;
         }
@@ -56,7 +56,7 @@
         }
         /* 消息列表 */
         
-        .news-list {
+        .abroad-list {
             width: 90%;
             margin: 0 auto 40px;
             display: flex;
@@ -64,7 +64,7 @@
             gap: 15px;
         }
         
-        .news-item {
+        .abroad-item {
             width: 100%;
             gap: 20px;
             padding: 20px;
@@ -74,12 +74,12 @@
             margin-bottom: 10px;
         }
         
-        .news-item:last-child {
+        .abroad-item:last-child {
             border-bottom: none;
         }
         /* 左侧消息图片 */
         
-        .news-img {
+        .abroad-img {
             width: 100%;
             height: 80%;
             flex-shrink: 0;
@@ -87,42 +87,44 @@
             overflow: hidden;
         }
         
-        .news-img img {
+        .abroad-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
         /* 右侧消息内容 */
         
-        .news-content {
+        .abroad-content {
             flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            cursor: pointer;
+            /* 鼠标悬浮变小手 */
         }
         
-        .news-content h3 {
+        .abroad-content h3 {
             font-size: 26px;
             color: #333;
             margin-bottom: 8px;
         }
         
-        .news-content h3 a:hover {
+        .abroad-content h3 a:hover {
             color: #EF89A0;
         }
         
-        .news-desc {
+        .abroad-desc {
             font-size: 20px;
             color: #666;
             line-height: 1.6;
             margin-bottom: 10px;
         }
         
-        .news-desc a:hover {
+        .abroad-desc a:hover {
             color: #EF89A0;
         }
         
-        .news-date {
+        .abroad-date {
             font-size: 13px;
             color: #999;
         }
@@ -150,14 +152,14 @@
             #menu-toggle:checked+.nav-list {
                 display: flex;
             }
-            .news-title {
+            .abroad-title {
                 flex-wrap: wrap;
             }
-            .news-list,
-            .news-item {
+            .abroad-list,
+            .abroad-item {
                 flex-direction: column;
             }
-            .news-img {
+            .abroad-img {
                 width: 100%;
                 height: auto;
             }
@@ -189,7 +191,7 @@
         <!-- 出国留学主体内容 -->
 
         <!-- 标题 + 4个表情 -->
-        <div class="news-title">
+        <div class="abroad-title">
             <h2>出国留学</h2>
             <div class="emoji-list">
                 <img src="pic/momo_1.PNG" alt="表情1" class="emoji">
@@ -200,37 +202,37 @@
         </div>
 
         <!-- 出国留学列表 -->
-        <div class="news-list">
+        <div class="abroad-list">
             <!-- 日本高中留学 -->
-            <div class="news-item">
-                <div class="news-img">
+            <div class="abroad-item">
+                <div class="abroad-img">
                     <img src="https://picsum.photos/180/120?random=news1" alt="日本高中留学">
                 </div>
-                <div class="news-content">
-                    <h3><a href="goabroadDetail.html">日本高中留学</a></h3>
-                    <p class="news-desc"><a href="goabroadDetail.html">早稻田从高中开始，奠定顶尖根基</a></p>
+                <div class="abroad-content" onclick="goDetail(1)">
+                    <h3>日本高中留学</h3>
+                    <p class="abroad-desc">早稻田从高中开始，奠定顶尖根基</p>
                 </div>
             </div>
 
             <!-- 消息2 -->
-            <div class="news-item">
-                <div class="news-img">
+            <div class="abroad-item">
+                <div class="abroad-img">
                     <img src="https://picsum.photos/180/120?random=news2" alt="日本大学留学">
                 </div>
-                <div class="news-content">
-                    <h3><a href="news-detail.html">日本大学留学</a></h3>
-                    <p class="news-desc"><a href="news-detail.html">直通名校，全方位升学规划</a></p>
+                <div class="abroad-content" onclick="goDetail(2)">
+                    <h3>日本大学留学</h3>
+                    <p class="abroad-desc">直通名校，全方位升学规划</p>
                 </div>
             </div>
 
             <!-- 消息3 -->
-            <div class="news-item">
-                <div class="news-img">
+            <div class="abroad-item">
+                <div class="abroad-img">
                     <img src="https://picsum.photos/180/120?random=news3" alt="日本大学院留学">
                 </div>
-                <div class="news-content">
-                    <h3><a href="news-detail.html">日本大学院留学</a></h3>
-                    <p class="news-desc"><a href="news-detail.html">硕士、博士直通，专业进阶快车道</a></p>
+                <div class="abroad-content" onclick="goDetail(3)">
+                    <h3>日本大学院留学</h3>
+                    <p class="abroad-desc">硕士、博士直通，专业进阶快车道</p>
                 </div>
             </div>
 
@@ -242,7 +244,13 @@
     <script>
         $("#footer-box").load("footer.html");
     </script>
-
+    <script>
+        // 跳转函数：拼接URL参数
+        function goDetail(id) {
+            // 跳转到 courseInfo.html，并携带 id 参数
+            location.href = `abroadDetail.html?id=${id}`;
+        }
+    </script>
 </body>
 
 </html>
