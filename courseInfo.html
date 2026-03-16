@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>石家庄桃太郎日本语</title>
+    <link rel="icon" href="pic/logo.PNG">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        /* 面包屑导航 */
+        
+        .breadcrumb {
+            width: 90%;
+            margin: 20px auto;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .breadcrumb a {
+            color: #666;
+        }
+        
+        .breadcrumb a:hover {
+            color: #EF89A0;
+        }
+        
+        .breadcrumb span {
+            margin: 0 5px;
+        }
+        /* 课程详情主体 */
+        
+        .course-detail {
+            width: 90%;
+            margin: 0 auto 40px;
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+        /* 左侧课程图片 */
+        
+        .course-detail-img {
+            width: 45%;
+            flex-shrink: 0;
+        }
+        
+        .course-detail-img img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        /* 右侧课程信息 */
+        
+        .course-detail-info {
+            flex: 1;
+        }
+        
+        .course-detail-info h2 {
+            color: #EF89A0;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .course-desc {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        /* 右侧立即预约按钮（桃子背景） */
+        
+        .course-right {
+            flex-shrink: 0;
+            text-align: right;
+        }
+        
+        .book-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            color: #fff;
+            font-size: 20px;
+            background: url(pic/momo.png) no-repeat center;
+            background-size: contain;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        /* 手机端 */
+        
+        @media (max-width: 992px) {
+            .tel {
+                display: block;
+            }
+            .nav-list {
+                display: none;
+                flex-direction: column;
+            }
+            .nav-list>li {
+                padding: 14px 5%;
+            }
+            .submenu {
+                position: static;
+                width: 100%;
+                min-width: 100px !important;
+            }
+            .hamburger {
+                display: block;
+            }
+            #menu-toggle:checked+.nav-list {
+                display: flex;
+            }
+            .banner-section {
+                flex-direction: column;
+            }
+            .banner,
+            .banner-contact {
+                width: 100%;
+            }
+            .course-detail {
+                flex-direction: column;
+            }
+            .course-detail-img {
+                width: 100%;
+            }
+            .course-detail-img img {
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 引用导航 -->
+    <div id="nav-box"></div>
+    <script>
+        $(function() {
+            $("#nav-box").load("nav.html", function() {
+                // 导航加载完成后，自动设置当前页高亮
+                var page = "course";
+                $("[data-page='" + page + "']").addClass("active");
+            });
+        });
+    </script>
+    <div class="content">
+        <!-- 面包屑导航 -->
+        <div class="breadcrumb">
+            <a href="index.html">首页</a><span>&gt;</span>
+            <span>课程中心</span><span>&gt;</span>
+            <a href="course.html">日语课程</a><span>&gt;</span>
+            <span>高考日语</span>
+        </div>
+        <!-- 日语课程 -->
+        <section class="course-detail">
+            <!-- 左侧课程图片 -->
+            <div class="course-detail-img">
+                <img src="pic/course.jpg" alt="高考日语">
+            </div>
+            <!-- 右侧课程信息 -->
+            <div class="course-detail-info">
+                <h2>高考日语</h2>
+                <div class="course-desc">
+                    专为想以日语替代英语参加高考的学子定制，适配零基础、英语薄弱学员，深度贴合全国高考日语新课标与命题趋势。深耕高考日语教学的师资团队经验丰富，曾多次精准押中高考日语考点及原题。课程从五十音基础夯实，到听力、阅读、语法填空、写作四大题型专项突破，打造系统化备考体系。
+                </div>
+                <div class="course-right">
+                    <a href="tel:15931212710" class="book-btn">立即预约</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 引用底部 -->
+    <div id="footer-box"></div>
+    <script>
+        $("#footer-box").load("footer.html");
+    </script>
+
+</body>
+
+</html>

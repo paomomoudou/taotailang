@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>石家庄桃太郎日本语</title>
+    <link rel="icon" href="pic/logo.PNG">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        /* 面包屑导航 */
+        
+        .breadcrumb {
+            width: 90%;
+            margin: 20px auto;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .breadcrumb a {
+            color: #666;
+        }
+        
+        .breadcrumb a:hover {
+            color: #EF89A0;
+        }
+        
+        .breadcrumb span {
+            margin: 0 5px;
+        }
+        /* 详情内容 */
+        
+        .detail-wrapper {
+            width: 80%;
+            margin: 30px auto;
+            background-color: #FCE4E7;
+            padding: 30px;
+        }
+        
+        .detail-title {
+            font-size: 26px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .detail-date {
+            text-align: center;
+            color: #999;
+            font-size: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .detail-img {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .detail-img img {
+            border-radius: 8px;
+        }
+        
+        .detail-content {
+            font-size: 20px;
+            color: #555;
+            line-height: 1.9;
+            text-align: justify;
+        }
+        /* 手机端 */
+        
+        @media (max-width: 992px) {
+            .tel {
+                display: block;
+            }
+            .nav-list {
+                display: none;
+                flex-direction: column;
+            }
+            .nav-list>li {
+                padding: 14px 5%;
+            }
+            .submenu {
+                position: static;
+                width: 100%;
+                min-width: 100px !important;
+            }
+            .hamburger {
+                display: block;
+            }
+            #menu-toggle:checked+.nav-list {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 引用导航 -->
+    <div id="nav-box"></div>
+    <script>
+        $(function() {
+            $("#nav-box").load("nav.html", function() {
+                // 导航加载完成后，自动设置当前页高亮
+                var page = "news";
+                $("[data-page='" + page + "']").addClass("active");
+            });
+        });
+    </script>
+    <div class="content">
+        <!-- 面包屑导航 -->
+        <div class="breadcrumb">
+            <a href="index.html">首页</a><span>&gt;</span>
+            <span>活动资讯</span><span>&gt;</span>
+            <a href="news.html">最新消息</a><span>&gt;</span>
+            <span>在石家庄桃太郎日语，一站式搞定日语学习+日本留学</span>
+        </div>
+
+        <div class="detail-wrapper">
+            <h1 class="detail-title">在石家庄桃太郎日语，一站式搞定日语学习+日本留学</h1>
+            <div class="detail-date">发布时间：2026-03-10</div>
+            <div class="detail-img">
+                <img src="https://picsum.photos/600/400?random=11" alt="桃太郎日语">
+            </div>
+            <div class="detail-content">
+                <p>作为一名向往日本留学的学员，我曾担心语言学习和留学申请会是两段割裂又繁琐的过程。但在桃太郎日语，我找到了理想的解决方案。</p>
+                <p>在这里，我从零基础开始，系统学习了日语基础课、考级强化课和留学口语课。专业的老师不仅帮我夯实了语言基础，还针对性地提升了我的应试能力和口语表达，让我顺利通过了JLPT考试，为留学申请打下了坚实的语言基础。</p>
+                <p>更让我惊喜的是，桃太郎日语还提供了从院校选择、材料准备、签证办理到行前指导的全流程留学服务。专属顾问根据我的情况定制了申请方案，全程跟进，帮我解决了各种难题，最终让我成功拿到了心仪日本大学的录取通知书。</p>
+                <p>从语言学习到留学升学，桃太郎日语真正实现了一站式服务，让我无需多方奔波，就能安心、高效地完成赴日留学的全部准备，开启了人生的新篇章。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引用底部 -->
+    <div id="footer-box"></div>
+    <script>
+        $("#footer-box").load("footer.html");
+    </script>
+
+</body>
+
+</html>
