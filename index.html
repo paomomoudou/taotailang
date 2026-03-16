@@ -321,6 +321,8 @@
         
         .course-middle {
             flex: 1;
+            cursor: pointer;
+            /* 鼠标悬浮变小手 */
         }
         
         .course-middle h3 {
@@ -572,9 +574,9 @@
                     <div class="course-left">
                         <img src="pic/hot_course_1.PNG" alt="暑假日语课程" class="course-icon">
                     </div>
-                    <div class="course-middle">
-                        <h3><a href="">暑假日语课程</a></h3>
-                        <p><a href="">假期高效提升，零基础快速入门</a></p>
+                    <div class="course-middle" onclick="goDetail(1)">
+                        <h3>暑假日语课程</h3>
+                        <p>假期高效提升，零基础快速入门</p>
                     </div>
                 </div>
 
@@ -584,9 +586,9 @@
                         <!-- 可替换为你自己的图标 -->
                         <img src="pic/hot_course_2.PNG" alt="考研日语课程" class="course-icon">
                     </div>
-                    <div class="course-middle">
-                        <h3><a href="">考研日语课程</a></h3>
-                        <p><a href="">203考研专项，考点精讲稳提分</a></p>
+                    <div class="course-middle" onclick="goDetail(2)">
+                        <h3>考研日语课程</h3>
+                        <p>203考研专项，考点精讲稳提分</p>
                     </div>
                 </div>
 
@@ -595,9 +597,9 @@
                     <div class="course-left">
                         <img src="pic/hot_course_3.PNG" alt="留学口语课程" class="course-icon">
                     </div>
-                    <div class="course-middle">
-                        <h3><a href="">留学口语课程</a></h3>
-                        <p><a href="">实景对话训练，赴日交流零障碍</a></p>
+                    <div class="course-middle" onclick="goDetail(3)">
+                        <h3>留学口语课程</h3>
+                        <p>实景对话训练，赴日交流零障碍</p>
                     </div>
                 </div>
 
@@ -606,16 +608,16 @@
                     <div class="course-left">
                         <img src="pic/hot_course_4.PNG" alt="免费试听课" class="course-icon">
                     </div>
-                    <div class="course-middle">
-                        <h3><a href="">免费试听课</a></h3>
-                        <p><a href="">0元体验精品课，专业老师一对一</a></p>
+                    <div class="course-middle" onclick="goDetail(4)">
+                        <h3>免费试听课</h3>
+                        <p>0元体验精品课，专业老师一对一</p>
                     </div>
                 </div>
             </div>
 
             <!-- 底部更多按钮（桃子背景） -->
             <div class="course-more-wrapper">
-                <a href="#" class="course-more">更多</a>
+                <a href="course.html" class="course-more">更多</a>
             </div>
         </section>
 
@@ -650,6 +652,13 @@
             .then(data => {
                 document.getElementById('float-container').innerHTML = data;
             });
+    </script>
+    <script>
+        // 跳转函数：拼接URL参数
+        function goDetail(id) {
+            // 跳转到 courseInfo.html，并携带 id 参数
+            location.href = `hotcourseInfo.html?id=${id}`;
+        }
     </script>
 </body>
 
