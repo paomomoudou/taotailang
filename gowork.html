@@ -52,6 +52,10 @@
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+        
+        p {
+            text-indent: 2em;
+        }
         /* 右侧课程信息 */
         
         .studytour-detail-info {
@@ -178,10 +182,10 @@
                 </div>
 
                 <div class="studytour-desc">
+                    <p>桃太郎日本语·赴日服务全链路</p>
                     <p>从语言学习到海外深造，从旅行体验到职业发展，桃太郎日本语为你提供全链路、一站式赴日服务。多年深耕日本教育与职场市场，我们整合优质资源，为不同阶段、不同目标的学员提供量身定制的升学与出行方案，让每一步赴日之路，都更加稳妥、高效、有保障。</p>
                     <p>为计划前往日本企业工作的技术人员、职场人士提供合规、稳定的派遣渠道。</p>
                     <p>我们对接日本正规企业，提供岗位匹配、日语职场技能训练、在日就业手续办理及在日生活支持等全流程服务。根据不同技能方向，精准推荐就业岗位，帮助学员在日本职场实现稳定发展，获得国际化职业经历与丰厚回报。</p>
-                    <p>桃太郎日本语·赴日服务全链路</p>
                     <p>从高中、大学、大学院升学，到游学交流、海外就业，我们以专业体系与全程资源，助你轻松走向日本，开启全新人生篇章。</p>
                 </div>
                 <div class="studytour-right">
@@ -197,7 +201,16 @@
     <script>
         $("#footer-box").load("footer.html");
     </script>
-
+    <!-- 引入右下角飘窗 -->
+    <div id="float-container"></div>
+    <script>
+        // 使用 fetch 引入公共文件
+        fetch('float.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('float-container').innerHTML = data;
+            });
+    </script>
 </body>
 
 </html>

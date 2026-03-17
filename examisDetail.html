@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>石家庄桃太郎日本语</title>
+    <link rel="icon" href="pic/logo.PNG">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        /* 面包屑导航 */
+        
+        .breadcrumb {
+            width: 90%;
+            margin: 20px auto;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .breadcrumb a {
+            color: #666;
+        }
+        
+        .breadcrumb a:hover {
+            color: #EF89A0;
+        }
+        
+        .breadcrumb span {
+            margin: 0 5px;
+        }
+        /* 详情内容 */
+        
+        .detail-wrapper {
+            width: 80%;
+            margin: 30px auto;
+            background-color: #FCE4E7;
+            padding: 30px;
+        }
+        
+        p {
+            text-indent: 2em;
+        }
+        
+        .detail-title {
+            font-size: 26px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .detail-date {
+            text-align: center;
+            color: #999;
+            font-size: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .detail-img {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .detail-img img {
+            border-radius: 8px;
+            margin: 0 auto;
+        }
+        
+        .detail-content {
+            font-size: 20px;
+            line-height: 1.9;
+            text-align: justify;
+        }
+        /* 手机端 */
+        
+        @media (max-width: 992px) {
+            .tel {
+                display: block;
+            }
+            .nav-list {
+                display: none;
+                flex-direction: column;
+            }
+            .nav-list>li {
+                padding: 14px 5%;
+            }
+            .submenu {
+                position: static;
+                width: 100%;
+                min-width: 100px !important;
+            }
+            .hamburger {
+                display: block;
+            }
+            #menu-toggle:checked+.nav-list {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 引用导航 -->
+    <div id="nav-box"></div>
+    <script>
+        $(function() {
+            $("#nav-box").load("nav.html", function() {
+                // 导航加载完成后，自动设置当前页高亮
+                var page = "examis";
+                $("[data-page='" + page + "']").addClass("active");
+            });
+        });
+    </script>
+    <div class="content">
+        <div class="detail" id="d1" style="display:none;">
+            <!-- 面包屑导航 -->
+            <div class="breadcrumb">
+                <a href="index.html">首页</a><span>&gt;</span>
+                <span>活动资讯</span><span>&gt;</span>
+                <a href="examis.html">考试资讯</a><span>&gt;</span>
+                <span>2026年7月JLPT日语能力考报名进行中</span>
+            </div>
+
+            <div class="detail-wrapper">
+                <h1 class="detail-title">2026年7月JLPT日语能力考报名进行中</h1>
+                <div class="detail-date">发布时间：2026-03-17</div>
+                <div class="detail-img">
+                    <img src="https://picsum.photos/600/400?random=11" alt="桃太郎日语">
+                </div>
+                <div class="detail-content">
+                    <p>• 注册时间：3月11日7:00—3月24日14:00</p>
+                    <p>• 报名缴费：3月17日7:00—3月24日14:00</p>
+                    <p>• 考试时间：7月5日（N1/N2上午，N3-N5下午）</p>
+                    <p>• 适用：留学、升学、就业、能力证明</p>
+                    <p>提醒：考位紧张，建议尽早完成注册与缴费。</p>
+                </div>
+            </div>
+        </div>
+        <div class="detail" id="d2" style="display:none;">
+            <!-- 面包屑导航 -->
+            <div class="breadcrumb">
+                <a href="index.html">首页</a><span>&gt;</span>
+                <span>活动资讯</span><span>&gt;</span>
+                <a href="examis.html">考试资讯</a><span>&gt;</span>
+                <span>2026年J.TEST实用日本语考试第186回报名预告</span>
+            </div>
+
+            <div class="detail-wrapper">
+                <h1 class="detail-title">2026年J.TEST实用日本语考试第186回报名预告</h1>
+                <div class="detail-date">发布时间：2026-03-16</div>
+                <div class="detail-img">
+                    <img src="https://picsum.photos/600/400?random=11" alt="桃太郎日语">
+                </div>
+                <div class="detail-content">
+                    <p>• 第186回报名：3月25日—4月9日</p>
+                    <p>• 考试时间：5月10日（上午）</p>
+                    <p>• 开考级别：A-C / D-E / F-G全覆盖</p>
+                    <p>• 适合：职场日语、赴日就职、零基础考级。</p>
+                    <p>适合想快速拿到日语实用能力证书的同学。</p>
+                </div>
+            </div>
+        </div>
+        <div class="detail" id="d3" style="display:none;">
+            <!-- 面包屑导航 -->
+            <div class="breadcrumb">
+                <a href="index.html">首页</a><span>&gt;</span>
+                <span>活动资讯</span><span>&gt;</span>
+                <a href="examis.html">考试资讯</a><span>&gt;</span>
+                <span>2026考研日语（203）备考关键提醒</span>
+            </div>
+
+            <div class="detail-wrapper">
+                <h1 class="detail-title">2026考研日语（203）备考关键提醒</h1>
+                <div class="detail-date">发布时间：2026-03-15</div>
+                <div class="detail-img">
+                    <img src="https://picsum.photos/600/400?random=11" alt="桃太郎日语">
+                </div>
+                <div class="detail-content">
+                    <p>• 适用：绝大多数专业，不限日语基础</p>
+                    <p>• 优势：难度低于英语一，题型稳定，高分率更高</p>
+                    <p>• 备考重点：词汇语法、阅读、日汉翻译、作文</p>
+                    <p>• 建议：零基础/英语差的同学优先选择，尽早系统备考。</p>
+                </div>
+            </div>
+        </div>
+        <div class="detail" id="d4" style="display:none;">
+            <!-- 面包屑导航 -->
+            <div class="breadcrumb">
+                <a href="index.html">首页</a><span>&gt;</span>
+                <span>活动资讯</span><span>&gt;</span>
+                <a href="examis.html">考试资讯</a><span>&gt;</span>
+                <span>2026年JLPT日语能力考7月场次报名与新规解读</span>
+            </div>
+
+            <div class="detail-wrapper">
+                <h1 class="detail-title">2026年JLPT日语能力考7月场次报名与新规解读</h1>
+                <div class="detail-date">发布时间：2026-03-14</div>
+                <div class="detail-img">
+                    <img src="https://picsum.photos/600/400?random=11" alt="桃太郎日语">
+                </div>
+                <div class="detail-content">
+                    <p>2026年7月JLPT日本语能力测试官方安排已正式公布，本次考试将于7月5日举行，开设N1至N5全级别，是本年度最重要的日语能力认证考试之一。</p>
+                    <p>报名阶段分为注册与缴费两步：个人信息注册时间为3月11日7:00—3月24日14:00，正式报名与缴费时间为3月17日7:00—3月24日14:00，考生需在规定时间内完成操作，逾期将无法补报。</p>
+                    <p>从2026年起，JLPT成绩单全面新增CEFR国际语言等级标注，N1对应C1、N2对应B2，证书在留学申请、日企就业、海外升学等场景的认可度进一步提升。</p>
+                    <p>需要注意的是，日本国内考场已收紧报名资格，持短期签证考生不可在日本参考，建议国内考生优先选择中国大陆考点。本次考试依旧分为文字词汇、语法阅读、听力三大板块，难度与合格线保持稳定，适合留学、考研、就业及日语能力证明的各类考生报考。</p>
+                </div>
+            </div>
+        </div>
+        <div class="detail" id="d5" style="display:none;">
+            <!-- 面包屑导航 -->
+            <div class="breadcrumb">
+                <a href="index.html">首页</a><span>&gt;</span>
+                <span>活动资讯</span><span>&gt;</span>
+                <a href="examis.html">考试资讯</a><span>&gt;</span>
+                <span>2026年J.TEST实用日本语检定全年安排与报考指南</span>
+            </div>
+
+            <div class="detail-wrapper">
+                <h1 class="detail-title">2026年J.TEST实用日本语检定全年安排与报考指南</h1>
+                <div class="detail-date">发布时间：2026-03-13</div>
+                <div class="detail-img">
+                    <img src="https://picsum.photos/600/400?random=11" alt="桃太郎日语">
+                </div>
+                <div class="detail-content">
+                    <p>2026年度J.TEST实用日本语检定考试日程已全部公布，全年共6次考试，分别在1月、3月、5月、7月、9月、11月举行，考试频次高、出分快，适合急需日语证书的考生。</p>
+                    <p>本年度关键场次包括：第186回5月10日、第187回7月12日、第189回11月1日，开考级别覆盖A-C、D-E、F-G全段位，可满足零基础至高级学习者的需求。J.TEST侧重实用日语与职场应用，被众多日资企业、涉外机构、入境在留资格申请认可，题型贴近真实工作与生活场景，听力占比高，更能检验实际交流能力。报名通常在考前1.5—2个月开启，支持线上注册与缴费，考完约1个月即可查询成绩并领取证书。对于无法等待JLPT半年一考、或需要快速证明日语应用水平的同学，J.TEST是高性价比的优选。</p>
+                </div>
+            </div>
+        </div>
+        <div class="detail" id="d6" style="display:none;">
+            <!-- 面包屑导航 -->
+            <div class="breadcrumb">
+                <a href="index.html">首页</a><span>&gt;</span>
+                <span>活动资讯</span><span>&gt;</span>
+                <a href="examis.html">考试资讯</a><span>&gt;</span>
+                <span>2026考研日语（203）备考关键信息与提分策略</span>
+            </div>
+
+            <div class="detail-wrapper">
+                <h1 class="detail-title">2026考研日语（203）备考关键信息与提分策略</h1>
+                <div class="detail-date">发布时间：2026-03-12</div>
+                <div class="detail-img">
+                    <img src="https://picsum.photos/600/400?random=11" alt="桃太郎日语">
+                </div>
+                <div class="detail-content">
+                    <p>2026年全国硕士研究生招生考试中，公共外语203日语继续作为统考科目，可替代英语一/英语二，成为众多考生的“提分捷径”。根据教育部规定，203日语为全国统一命题，试卷结构稳定，包含基础知识、阅读理解、日汉翻译、短文写作四大模块，不设听力，整体难度介于JLPT N2—N1之间，对日语学习者更为友好。相比英语，203日语具有词汇量要求更低、题型固定、高分率更高、竞争压力更小等优势，适合英语薄弱、高考日语、零基础起步的考生。2026年多所高校扩大203日语适用专业范围，文科、艺术、管理、部分工科专业均可报考。建议备考考生尽早规划，夯实语法与词汇，强化阅读训练与作文模板积累，配合真题刷题与模拟检测，更容易在考研外语科目中拉开分数差距，提升上岸几率。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 引用底部 -->
+    <div id="footer-box"></div>
+    <script>
+        $("#footer-box").load("footer.html");
+    </script>
+    <!-- 引入右下角飘窗 -->
+    <div id="float-container"></div>
+    <script>
+        // 使用 fetch 引入公共文件
+        fetch('float.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('float-container').innerHTML = data;
+            });
+    </script>
+    <script>
+        // 一、获取 url 里的 id 参数
+        function getId() {
+            let params = new URLSearchParams(location.search);
+            return params.get("id");
+        }
+
+        // 二、根据 id 显示对应盒子
+        window.onload = function() {
+            let id = getId(); // 拿到 1、2、3...
+
+            // 先全部隐藏
+            let all = document.querySelectorAll(".detail");
+            all.forEach(item => {
+                item.style.display = "none";
+            });
+
+            // 只显示对应盒子
+            let showBox = document.getElementById("d" + id);
+            if (showBox) {
+                showBox.style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>

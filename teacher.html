@@ -53,6 +53,8 @@
             background: #fff;
             border-radius: 4px;
             overflow: hidden;
+            cursor: pointer;
+            /* 鼠标悬浮变小手 */
         }
         
         .teacher-img {
@@ -118,9 +120,6 @@
             .teacher-list {
                 grid-template-columns: repeat(2, 1fr);
             }
-        }
-        
-        @media (max-width: 576px) {
             .teacher-list {
                 grid-template-columns: 1fr;
             }
@@ -153,59 +152,69 @@
         <section class="teacher">
             <div class="teacher-list">
                 <!-- 老师卡片1 -->
-                <div class="teacher-card">
-                    <a href="#">
-                        <img src="pic/teacher1.jpg" alt="李老师" class="teacher-img">
-                        <div class="teacher-main">
-                            <div class="teacher-box">
-                                <div class="teacher-name">李老师</div>
-                                <div class="teacher-title"><img src="pic/momo.PNG" class="momo">桃太郎日语创始人</div>
-                            </div>
-                            <div class="teacher-desc">
-                                <p>资深日语教学经验，日语能力N1</p>
-                            </div>
+                <div class="teacher-card" onclick="goDetail(1)">
+                    <img src="pic/teacher1.jpg" alt="李老师" class="teacher-img">
+                    <div class="teacher-main">
+                        <div class="teacher-box">
+                            <div class="teacher-name">李老师</div>
+                            <div class="teacher-title"><img src="pic/momo.PNG" class="momo">桃太郎日语创始人</div>
                         </div>
-                    </a>
+                        <div class="teacher-desc">
+                            <p>资深日语教学经验，日语能力N1</p>
+                        </div>
+                    </div>
                 </div>
                 <!-- 老师卡片2 -->
-                <div class="teacher-card">
-                    <a href="#">
-                        <img src="pic/teacher2.jpg" alt="王老师" class="teacher-img">
-                        <div class="teacher-main">
-                            <div class="teacher-box">
-                                <div class="teacher-name">王老师</div>
-                                <div class="teacher-title"><img src="pic/momo.PNG" class="momo">石家庄学院校区校长</div>
-                            </div>
-                            <div class="teacher-desc">
-                                <p>日语教学经验丰富，日语能力N1，多年日本生活经历</p>
-                            </div>
+                <div class="teacher-card" onclick="goDetail(2)">
+                    <img src="pic/teacher2.jpg" alt="王老师" class="teacher-img">
+                    <div class="teacher-main">
+                        <div class="teacher-box">
+                            <div class="teacher-name">王老师</div>
+                            <div class="teacher-title"><img src="pic/momo.PNG" class="momo">石家庄学院校区校长</div>
                         </div>
-                    </a>
+                        <div class="teacher-desc">
+                            <p>日语教学经验丰富，日语能力N1，多年日本生活经历</p>
+                        </div>
+                    </div>
                 </div>
                 <!-- 老师卡片3 -->
-                <div class="teacher-card">
-                    <a href="#">
-                        <img src="pic/teacher3.jpg" alt="王老师" class="teacher-img">
-                        <div class="teacher-main">
-                            <div class="teacher-box">
-                                <div class="teacher-name">王老师</div>
-                                <div class="teacher-title"><img src="pic/momo.PNG" class="momo">首席教师</div>
-                            </div>
-                            <div class="teacher-desc">
-                                <p>日语教学经验丰富，日语能力N1</p>
-                            </div>
+                <div class="teacher-card" onclick="goDetail(3)">
+                    <img src="pic/teacher3.jpg" alt="王老师" class="teacher-img">
+                    <div class="teacher-main">
+                        <div class="teacher-box">
+                            <div class="teacher-name">王老师</div>
+                            <div class="teacher-title"><img src="pic/momo.PNG" class="momo">首席教师</div>
                         </div>
-                    </a>
+                        <div class="teacher-desc">
+                            <p>日语教学经验丰富，日语能力N1</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        </mdiv>
-        <!-- 引用底部 -->
-        <div id="footer-box"></div>
-        <script>
-            $("#footer-box").load("footer.html");
-        </script>
-
+    </div>
+    <!-- 引用底部 -->
+    <div id="footer-box"></div>
+    <script>
+        $("#footer-box").load("footer.html");
+    </script>
+    <!-- 引入右下角飘窗 -->
+    <div id="float-container"></div>
+    <script>
+        // 使用 fetch 引入公共文件
+        fetch('float.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('float-container').innerHTML = data;
+            });
+    </script>
+    <script>
+        // 跳转函数：拼接URL参数
+        function goDetail(id) {
+            // 跳转到 teacherInfo.html，并携带 id 参数
+            location.href = `teacherInfo.html?id=${id}`;
+        }
+    </script>
 </body>
 
 </html>

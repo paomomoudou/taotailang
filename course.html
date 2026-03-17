@@ -99,17 +99,7 @@
         }
         
         .book-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
             width: 80px;
-            height: 60px;
-            color: #fff;
-            font-size: 12px;
-            background: url(pic/momo.PNG) no-repeat center;
-            background-size: contain;
-            text-decoration: none;
-            border-radius: 4px;
         }
         /* 手机端 */
         
@@ -186,6 +176,7 @@
                         <h3>高考日语</h3>
                         <p>换道超车，冲刺高考高分</p>
                     </div>
+                    <img src="pic/momo.PNG" class="book-btn">
                 </div>
 
                 <!-- 课程2：留学日语 -->
@@ -198,9 +189,7 @@
                         <h3>留学日语</h3>
                         <p>直通日本院校，无缝衔接海外生活</p>
                     </div>
-                    <div class="course-right">
-                        <a href="#" class="book-btn">立即预约</a>
-                    </div>
+                    <img src="pic/momo.PNG" class="book-btn">
                 </div>
 
                 <!-- 课程3：考级日语 -->
@@ -212,9 +201,7 @@
                         <h3>考级日语</h3>
                         <p>精准冲刺高分，高效通过JLPT</p>
                     </div>
-                    <div class="course-right">
-                        <a href="#" class="book-btn">立即预约</a>
-                    </div>
+                    <img src="pic/momo.PNG" class="book-btn">
                 </div>
 
                 <!-- 课程4：203日语考研 -->
@@ -226,9 +213,7 @@
                         <h3>203日语考研</h3>
                         <p>定制备考方案，助力上岸</p>
                     </div>
-                    <div class="course-right">
-                        <a href="#" class="book-btn">立即预约</a>
-                    </div>
+                    <img src="pic/momo.PNG" class="book-btn">
                 </div>
 
                 <div class="course-card">
@@ -239,9 +224,7 @@
                         <h3>商务日语</h3>
                         <p>职场进阶利器，解锁日企高薪机会</p>
                     </div>
-                    <div class="course-right">
-                        <a href="#" class="book-btn">立即预约</a>
-                    </div>
+                    <img src="pic/momo.PNG" class="book-btn">
                 </div>
 
                 <div class="course-card">
@@ -252,9 +235,7 @@
                         <h3>兴趣日语</h3>
                         <p>走进日本文化，轻松解锁热爱与表达</p>
                     </div>
-                    <div class="course-right">
-                        <a href="#" class="book-btn">立即预约</a>
-                    </div>
+                    <img src="pic/momo.PNG" class="book-btn">
                 </div>
 
                 <div class="course-card">
@@ -265,9 +246,7 @@
                         <h3>旅游日语</h3>
                         <p>出行无忧，自由畅游日本全境</p>
                     </div>
-                    <div class="course-right">
-                        <a href="#" class="book-btn">立即预约</a>
-                    </div>
+                    <img src="pic/momo.PNG" class="book-btn">
                 </div>
 
                 <div class="course-card">
@@ -278,9 +257,7 @@
                         <h3>外教口语</h3>
                         <p>纯母语环境，沉浸式练就地道日语</p>
                     </div>
-                    <div class="course-right">
-                        <a href="#" class="book-btn">立即预约</a>
-                    </div>
+                    <img src="pic/momo.PNG" class="book-btn">
                 </div>
 
                 <div class="course-card">
@@ -291,9 +268,7 @@
                         <h3>少儿日语</h3>
                         <p>启蒙语言思维，快乐从小扎根</p>
                     </div>
-                    <div class="course-right">
-                        <a href="#" class="book-btn">立即预约</a>
-                    </div>
+                    <img src="pic/momo.PNG" class="book-btn">
                 </div>
 
                 <div class="course-card">
@@ -304,9 +279,7 @@
                         <h3>初中高级基础课</h3>
                         <p>系统夯实语言能力，阶梯式稳步进阶</p>
                     </div>
-                    <div class="course-right">
-                        <a href="#" class="book-btn">立即预约</a>
-                    </div>
+                    <img src="pic/momo.PNG" class="book-btn">
                 </div>
 
             </div>
@@ -317,6 +290,16 @@
     <div id="footer-box"></div>
     <script>
         $("#footer-box").load("footer.html");
+    </script>
+    <!-- 引入右下角飘窗 -->
+    <div id="float-container"></div>
+    <script>
+        // 使用 fetch 引入公共文件
+        fetch('float.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('float-container').innerHTML = data;
+            });
     </script>
     <script>
         // 跳转函数：拼接URL参数

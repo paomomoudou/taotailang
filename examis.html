@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>石家庄桃太郎日本语</title>
+    <link rel="icon" href="pic/logo.PNG">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        /* 面包屑导航 */
+        
+        .breadcrumb {
+            width: 90%;
+            margin: 20px auto;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .breadcrumb a {
+            color: #666;
+        }
+        
+        .breadcrumb a:hover {
+            color: #EF89A0;
+        }
+        
+        .breadcrumb span {
+            margin: 0 5px;
+        }
+        /* 最新消息标题（带表情） */
+        
+        .news-title {
+            width: 80%;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .news-title h2 {
+            font-size: 26px;
+            color: #EF89A0;
+        }
+        
+        .emoji-list {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .emoji {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+        }
+        /* 消息列表 */
+        
+        .news-list {
+            width: 80%;
+            margin: 0 auto 40px;
+        }
+        
+        .news-item {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #f0d8e0;
+            background-color: #fdf0f4;
+            border-radius: 12px;
+        }
+        
+        .news-item:last-child {
+            border-bottom: none;
+        }
+        /* 左侧消息图片 */
+        
+        .news-img {
+            width: 180px;
+            height: 120px;
+            flex-shrink: 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .news-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* 右侧消息内容 */
+        
+        .news-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            /* 鼠标悬浮变小手 */
+        }
+        
+        .news-content h3 {
+            font-size: 26px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .news-content h3 a:hover {
+            color: #EF89A0;
+        }
+        
+        .news-desc {
+            font-size: 20px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .news-desc a:hover {
+            color: #EF89A0;
+        }
+        
+        .news-date {
+            font-size: 13px;
+            color: #999;
+        }
+        /* 手机端 */
+        
+        @media (max-width: 992px) {
+            .tel {
+                display: block;
+            }
+            .nav-list {
+                display: none;
+                flex-direction: column;
+            }
+            .nav-list>li {
+                padding: 14px 5%;
+            }
+            .submenu {
+                position: static;
+                width: 100%;
+                min-width: 100px !important;
+            }
+            .hamburger {
+                display: block;
+            }
+            #menu-toggle:checked+.nav-list {
+                display: flex;
+            }
+            .news-title {
+                flex-wrap: wrap;
+            }
+            .news-item {
+                flex-direction: column;
+            }
+            .news-img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 引用导航 -->
+    <div id="nav-box"></div>
+    <script>
+        $(function() {
+            $("#nav-box").load("nav.html", function() {
+                // 导航加载完成后，自动设置当前页高亮
+                var path = window.location.pathname;
+                var page = path.split("/").pop().replace(".html", ""); // 拿到当前页面名（如 about）
+                $("[data-page='" + page + "']").addClass("active");
+            });
+        });
+    </script>
+    <!-- 面包屑导航 -->
+    <div class="breadcrumb">
+        <a href="index.html">首页</a><span>&gt;</span>
+        <span>活动资讯</span><span>&gt;</span>
+        <span>考试资讯</span>
+    </div>
+
+    <!-- 考试资讯主体内容 -->
+    <div class="content">
+        <!-- 标题 + 4个表情 -->
+        <div class="news-title">
+            <h2>考试资讯</h2>
+            <div class="emoji-list">
+                <img src="pic/momo_1.PNG" alt="表情1" class="emoji">
+                <img src="pic/momo_2.PNG" alt="表情2" class="emoji">
+                <img src="pic/momo_3.PNG" alt="表情3" class="emoji">
+                <img src="pic/momo_4.PNG" alt="表情4" class="emoji">
+            </div>
+        </div>
+
+        <!-- 考试资讯列表 -->
+        <div class="news-list">
+            <!-- 考试资讯1 -->
+            <div class="news-item">
+                <div class="news-img">
+                    <img src="https://picsum.photos/180/120?random=news1" alt="2026年7月JLPT日语能力考报名进行中">
+                </div>
+                <div class="news-content">
+                    <div onclick="goDetail(1)">
+                        <h3>2026年7月JLPT日语能力考报名进行中</h3>
+                        <p class="news-desc">2026年7月JLPT（日本语能力测试）中国大陆报名已启动！</p>
+                    </div>
+                    <div class="news-date">2026-03-17</div>
+                </div>
+            </div>
+
+            <!-- 考试资讯2 -->
+            <div class="news-item">
+                <div class="news-img">
+                    <img src="https://picsum.photos/180/120?random=news2" alt="2026年J.TEST实用日本语考试第186回报名预告">
+                </div>
+                <div class="news-content">
+                    <div onclick="goDetail(2)">
+                        <h3>2026年J.TEST实用日本语考试第186回报名预告</h3>
+                        <p class="news-desc">J.TEST（实用日本语鉴定）被日企与入管局高度认可，一年多考，出分快。</p>
+                    </div>
+                    <div class="news-date">2026-03-16</div>
+                </div>
+            </div>
+
+            <!-- 考试资讯3 -->
+            <div class="news-item">
+                <div class="news-img">
+                    <img src="https://picsum.photos/180/120?random=news3" alt="2026考研日语（203）备考关键提醒">
+                </div>
+                <div class="news-content">
+                    <div onclick="goDetail(3)">
+                        <h3>2026考研日语（203）备考关键提醒</h3>
+                        <p class="news-desc">2026考研公共外语203日语可替代英语，提分优势明显。</p>
+                    </div>
+                    <div class="news-date">2026-03-15</div>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-img">
+                    <img src="https://picsum.photos/180/120?random=news3" alt="2026年JLPT日语能力考7月场次报名与新规解读">
+                </div>
+                <div class="news-content">
+                    <div onclick="goDetail(4)">
+                        <h3>2026年JLPT日语能力考7月场次报名与新规解读</h3>
+                        <p class="news-desc"></p>
+                    </div>
+                    <div class="news-date">2026-03-14</div>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-img">
+                    <img src="https://picsum.photos/180/120?random=news3" alt="2026年J.TEST实用日本语检定全年安排与报考指南">
+                </div>
+                <div class="news-content">
+                    <div onclick="goDetail(5)">
+                        <h3>2026年J.TEST实用日本语检定全年安排与报考指南</h3>
+                        <p class="news-desc"></p>
+                    </div>
+                    <div class="news-date">2026-03-13</div>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-img">
+                    <img src="https://picsum.photos/180/120?random=news3" alt="2026考研日语（203）备考关键信息与提分策略">
+                </div>
+                <div class="news-content">
+                    <div onclick="goDetail(6)">
+                        <h3>2026考研日语（203）备考关键信息与提分策略</h3>
+                        <p class="news-desc"></p>
+                    </div>
+                    <div class="news-date">2026-03-12</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- 引用底部 -->
+    <div id="footer-box"></div>
+    <script>
+        $("#footer-box").load("footer.html");
+    </script>
+    <!-- 引入右下角飘窗 -->
+    <div id="float-container"></div>
+    <script>
+        // 使用 fetch 引入公共文件
+        fetch('float.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('float-container').innerHTML = data;
+            });
+    </script>
+    <script>
+        // 跳转函数：拼接URL参数
+        function goDetail(id) {
+            // 跳转到 courseInfo.html，并携带 id 参数
+            location.href = `examisDetail.html?id=${id}`;
+        }
+    </script>
+</body>
+
+</html>

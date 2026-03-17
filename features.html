@@ -39,7 +39,6 @@
         .feature h2 {
             text-align: center;
             font-size: 26px;
-            color: #333;
             margin-bottom: 40px;
         }
         /* 每行特色项 */
@@ -269,7 +268,16 @@
     <script>
         $("#footer-box").load("footer.html");
     </script>
-
+    <!-- 引入右下角飘窗 -->
+    <div id="float-container"></div>
+    <script>
+        // 使用 fetch 引入公共文件
+        fetch('float.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('float-container').innerHTML = data;
+            });
+    </script>
 </body>
 
 </html>

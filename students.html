@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>石家庄桃太郎日本语</title>
+    <link rel="icon" href="pic/logo.PNG">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        /* 面包屑导航 */
+        
+        .breadcrumb {
+            width: 90%;
+            margin: 20px auto;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .breadcrumb a {
+            color: #666;
+        }
+        
+        .breadcrumb a:hover {
+            color: #EF89A0;
+        }
+        
+        .breadcrumb span {
+            margin: 0 5px;
+        }
+        /* 页面标题 */
+        
+        .page-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 20px 0 30px;
+            color: #333;
+        }
+        /* 两列网格容器 */
+        
+        .students-grid {
+            display: grid;
+            /* 两列：每列平分空间 */
+            grid-template-columns: repeat(2, 1fr);
+            /* 两个卡片之间的间距 */
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        /* 单个学生卡片 */
+        
+        .student-card {
+            display: flex;
+            /* 垂直对齐 */
+            align-items: flex-start;
+            /* 气泡圆角 */
+            border-radius: 15px;
+            padding: 15px;
+            /* 阴影效果，让气泡有浮起感 */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            /* 关键：根据内容自适应高度 */
+            height: auto;
+        }
+        /* 头像样式 */
+        
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            /* 圆形 */
+            object-fit: cover;
+            border: 3px solid #f0f0f0;
+            /* 固定宽度，不随内容变形 */
+            flex-shrink: 0;
+            margin-right: 15px;
+            margin-top: 10px;
+        }
+        /* 气泡内容区域 */
+        
+        .bubble-content {
+            /* 剩余空间全给内容 */
+            flex-grow: 1;
+            line-height: 1.6;
+            color: #555;
+        }
+        /* 气泡尾巴（用伪元素做） */
+        
+        .bubble-wrapper {
+            position: relative;
+            background: #b3e5fc;
+            border: 2px solid #d94a7a;
+            /* 浅蓝色背景，区分普通文本 */
+            padding: 12px;
+            border-radius: 10px;
+        }
+        /* 气泡尖角 */
+        
+        .bubble-wrapper::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            /* 用边框做三角形 */
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid #b3e5fc;
+        }
+        /* 手机端适配：单列 */
+        
+        @media (max-width: 992px) {
+            .tel {
+                display: block;
+            }
+            .nav-list {
+                display: none;
+                flex-direction: column;
+            }
+            .nav-list>li {
+                padding: 14px 5%;
+            }
+            .submenu {
+                position: static;
+                width: 100%;
+                min-width: 100px !important;
+            }
+            .hamburger {
+                display: block;
+            }
+            #menu-toggle:checked+.nav-list {
+                display: flex;
+            }
+            .students-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 引用导航 -->
+    <div id="nav-box"></div>
+    <script>
+        $(function() {
+            $("#nav-box").load("nav.html", function() {
+                // 导航加载完成后，自动设置当前页高亮
+                var path = window.location.pathname;
+                var page = path.split("/").pop().replace(".html", ""); // 拿到当前页面名
+                $("[data-page='" + page + "']").addClass("active");
+            });
+        });
+    </script>
+    <div class="content">
+        <!-- 面包屑导航 -->
+        <div class="breadcrumb">
+            <a href="index.html">首页</a><span>&gt;</span>
+            <span>学生寄语</span>
+        </div>
+        <h1 class="page-title">🌸 学生寄语 🌸</h1>
+
+        <div class="students-grid">
+
+            <!-- 第 1 行第 1 列 -->
+            <div class="student-card">
+                <img src="https://picsum.photos/seed/student1/60/60" alt="学生头像" class="avatar">
+                <div class="bubble-content">
+                    <div class="bubble-wrapper">
+                        <p>感谢桃太郎日语老师的耐心指导！从基础日语到N2通关，老师的课程体系非常清晰。特别是阅读课，教给我的拆解技巧让我在考试中事半功倍。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第 1 行第 2 列 -->
+            <div class="student-card">
+                <img src="https://picsum.photos/seed/student2/60/60" alt="学生头像" class="avatar">
+                <div class="bubble-content">
+                    <div class="bubble-wrapper">
+                        <p>这里不仅教日语，还提供全方位的留学咨询！老师帮我修改了履历和动机书，让我顺利拿到了去东京工业大学的内诺。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第 2 行第 1 列（内容多一点，测试自适应） -->
+            <div class="student-card">
+                <img src="https://picsum.photos/seed/student3/60/60" alt="学生头像" class="avatar">
+                <div class="bubble-content">
+                    <div class="bubble-wrapper">
+                        <p>工作太忙没时间去线下？桃太郎日语的线上课程完美解决了我的问题！老师直播讲课互动性强，课后还有录播可以回放复习。半年时间，我现在能看懂生肉动画啦！</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第 2 行第 2 列 -->
+            <div class="student-card">
+                <img src="https://picsum.photos/seed/student4/60/60" alt="学生头像" class="avatar">
+                <div class="bubble-content">
+                    <div class="bubble-wrapper">
+                        <p>孩子以前对英语没兴趣，没想到在桃太郎学日语反而爱上了学习。动画式的教学方式太吸引小朋友了，现在每天都主动背单词。</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- 引用底部 -->
+    <div id="footer-box"></div>
+    <script>
+        $("#footer-box").load("footer.html");
+    </script>
+    <!-- 引入右下角飘窗 -->
+    <div id="float-container"></div>
+    <script>
+        // 使用 fetch 引入公共文件
+        fetch('float.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('float-container').innerHTML = data;
+            });
+    </script>
+</body>
+
+</html>

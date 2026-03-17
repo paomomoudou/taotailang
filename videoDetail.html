@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>石家庄桃太郎日本语</title>
+    <link rel="icon" href="pic/logo.PNG">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        /* 面包屑导航 */
+        
+        .breadcrumb {
+            width: 90%;
+            margin: 20px auto;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .breadcrumb a {
+            color: #666;
+        }
+        
+        .breadcrumb a:hover {
+            color: #EF89A0;
+        }
+        
+        .breadcrumb span {
+            margin: 0 5px;
+        }
+        
+        video {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            /* 这里控制高度，你自己改数字就行 */
+            object-fit: cover;
+            display: block;
+            margin: 20px auto;
+        }
+        
+        .video-box {
+            display: none;
+            margin-bottom: 30px;
+        }
+        
+        .video-box video {
+            width: 90%;
+            max-width: 800px;
+            display: block;
+            margin: 20px auto;
+        }
+        
+        .video-title {
+            font-size: 22px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .time {
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+        }
+        /* 手机端自动变1列 */
+        
+        @media (max-width: 768px) {
+            .tel {
+                display: block;
+            }
+            .nav-list {
+                display: none;
+                flex-direction: column;
+            }
+            .nav-list>li {
+                padding: 14px 5%;
+            }
+            .submenu {
+                position: static;
+                width: 100%;
+                min-width: 100px !important;
+            }
+            .hamburger {
+                display: block;
+            }
+            #menu-toggle:checked+.nav-list {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 引用导航 -->
+    <div id="nav-box"></div>
+    <script>
+        $(function() {
+            $("#nav-box").load("nav.html", function() {
+                // 导航加载完成后，自动设置当前页高亮
+                var page = "videoDiary";
+                $("[data-page='" + page + "']").addClass("active");
+            });
+        });
+    </script>
+    <div class="content">
+
+        <div id="box1" class="video-box">
+            <!-- 面包屑导航 -->
+            <div class="breadcrumb">
+                <a href="index.html">首页</a><span>&gt;</span>
+                <a href="videoDiary.html">视频日记</a><span>&gt;</span>
+                <span>五十音入门学习第1天</span>
+            </div>
+            <div class="video-title">五十音入门学习第1天</div>
+            <div class="time">2026-03-17</div>
+            <video controls src="videos/video1.MP4"></video>
+        </div>
+
+        <div id="box2" class="video-box">
+            <!-- 面包屑导航 -->
+            <div class="breadcrumb">
+                <a href="index.html">首页</a><span>&gt;</span>
+                <a href="videoDiary.html">视频日记</a><span>&gt;</span>
+                <span>日语日常会话练习</span>
+            </div>
+            <div class="video-title">日语日常会话练习</div>
+            <div class="time">2026-03-16</div>
+            <video controls src="videos/video2.mp4"></video>
+        </div>
+
+        <div id="box3" class="video-box">
+            <!-- 面包屑导航 -->
+            <div class="breadcrumb">
+                <a href="index.html">首页</a><span>&gt;</span>
+                <a href="videoDiary.html">视频日记</a><span>&gt;</span>
+                <span>单词打卡第15天</span>
+            </div>
+            <div class="video-title">单词打卡第15天</div>
+            <div class="time">2026-03-15</div>
+            <video controls src="videos/video3.mp4"></video>
+        </div>
+
+        <div id="box4" class="video-box">
+            <!-- 面包屑导航 -->
+            <div class="breadcrumb">
+                <a href="index.html">首页</a><span>&gt;</span>
+                <a href="videoDiary.html">视频日记</a><span>&gt;</span>
+                <span>N3语法精讲</span>
+            </div>
+            <div class="video-title">N3语法精讲</div>
+            <div class="time">2026-03-14</div>
+            <video controls src="videos/video4.mp4"></video>
+        </div>
+    </div>
+    <!-- 引用底部 -->
+    <div id="footer-box"></div>
+    <script>
+        $("#footer-box").load("footer.html");
+    </script>
+    <!-- 引入右下角飘窗 -->
+    <div id="float-container"></div>
+    <script>
+        // 使用 fetch 引入公共文件
+        fetch('float.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('float-container').innerHTML = data;
+            });
+    </script>
+    <script>
+        function getId() {
+            let p = new URLSearchParams(location.search);
+            return p.get("id");
+        }
+
+        window.onload = function() {
+            let id = getId();
+            // 全部隐藏
+            document.querySelectorAll('.video-box').forEach(item => {
+                item.style.display = 'none';
+            });
+            // 显示对应
+            let showBox = document.getElementById('box' + id);
+            if (showBox) showBox.style.display = 'block';
+        }
+    </script>
+
+</body>
+
+</html>

@@ -68,6 +68,7 @@
             font-size: 18px;
             line-height: 1.8;
             margin-bottom: 25px;
+            text-indent: 2em;
         }
         /* 右侧立即预约按钮（桃子背景） */
         
@@ -413,6 +414,16 @@
     <div id="footer-box"></div>
     <script>
         $("#footer-box").load("footer.html");
+    </script>
+    <!-- 引入右下角飘窗 -->
+    <div id="float-container"></div>
+    <script>
+        // 使用 fetch 引入公共文件
+        fetch('float.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('float-container').innerHTML = data;
+            });
     </script>
     <script>
         // 一、获取 url 里的 id 参数
