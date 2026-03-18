@@ -151,7 +151,6 @@
             $("#nav-box").load("nav.html", function() {
                 // 导航加载完成后，自动设置当前页高亮
                 var page = "teacher";
-                var page = path.split("/").pop().replace(".html", ""); // 拿到当前页面名（如 about）
                 $("[data-page='" + page + "']").addClass("active");
             });
         });
